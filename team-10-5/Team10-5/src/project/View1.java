@@ -26,12 +26,6 @@ import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.geometry.Orientation;
 import javafx.scene.layout.*;
@@ -510,73 +504,6 @@ public class View1 {
 		//**************************************************************************************
 
 		control = new Controller();
-//		Group root3 = new Group();
-//		Scene scene3 = new Scene(root3, 1000, 600);
-//		Group root4 = new Group();
-//		Scene scene4 = new Scene(root4, 1000, 600);
-//
-//		confirm.setOnAction(e -> {
-//			theStage.setScene(drag_scene);
-//		});
-//
-//		theStage.setTitle("second page");
-//		ScrollPane leftpane = updateleftpane(control.buildRecommand());
-//		leftpane.setPrefWidth(124);
-//		Button Spring = new Button("Spring");
-//		Button Summer = new Button("Summer");
-//		Button Fall = new Button("Fall");
-//		Button Winter = new Button("Winter");
-//
-//		EventHandler<ActionEvent> Springevent = new EventHandler<ActionEvent>() {
-//			public void handle(ActionEvent e) {
-//				season = Season.SPRING;
-//				updateSeason(plantarr, season, scene3);
-//			}
-//		};
-//		EventHandler<ActionEvent> Summerevent = new EventHandler<ActionEvent>() {
-//			public void handle(ActionEvent e) {
-//				season = Season.SUMMER;
-//				updateSeason(plantarr, season, scene3);
-//			}
-//		};
-//		EventHandler<ActionEvent> Fallevent = new EventHandler<ActionEvent>() {
-//			public void handle(ActionEvent e) {
-//				season = Season.FALL;
-//				updateSeason(plantarr, season, scene3);
-//			}
-//		};
-//		EventHandler<ActionEvent> Winterevent = new EventHandler<ActionEvent>() {
-//			public void handle(ActionEvent e) {
-//				season = Season.WINTER;
-//				updateSeason(plantarr, season, scene3);
-//			}
-//		};
-//
-//		Spring.setOnAction(Springevent);
-//		Summer.setOnAction(Summerevent);
-//		Fall.setOnAction(Fallevent);
-//		Winter.setOnAction(Winterevent);
-//
-//		VBox vbox = new VBox(Spring, Summer, Fall, Winter);
-//		vbox.setAlignment(Pos.TOP_LEFT);
-//
-//		Button next2 = new Button("next");
-//		next2.setOnAction(e -> {
-//			theStage.setScene(scene4);
-//		});
-//
-//		BorderPane bp = new BorderPane();
-//		
-//		ImageView background = new ImageView(createImage("database/background.jpg") );
-//		bp.setLeft(leftpane);
-//		bp.setBottom(next2);
-//		bp.setRight(background);
-//		root3.getChildren().add(bp);
-//		BorderPane bp2 = new BorderPane();
-//		bp2.setCenter(pane);
-//		bp2.setLeft(vbox);
-//		root4.getChildren().add(bp2);
-		
 		
 //*******************drag and drop page*********************
 		theStage.setTitle("Garden Planner");
@@ -587,6 +514,34 @@ public class View1 {
 			theStage.setScene(drag_scene);
 		});
 		
+AnchorPane target = new AnchorPane();
+		
+		Button bg_load = new Button("load your lovely garden");
+		drag_bp.setTop(bg_load);
+		final FileChooser bgChooser = new FileChooser();
+		bg_load.setOnAction(
+	
+		new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(final ActionEvent e) {
+				File file = bgChooser.showOpenDialog(theStage);
+				if (file != null) {
+					Image image = new Image(file.toURI().toString());
+					ImageView bg = new ImageView(image);
+					bg.setFitHeight(500);
+					bg.setFitWidth(750);
+					target.getChildren().add(bg);
+//					BackgroundImage bgImage = new BackgroundImage(image,
+//						    BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+//						    BackgroundSize.DEFAULT);
+//					Background dgBackground = new Background(bgImage);
+//					target.setBackground(dgBackground);
+				}
+				
+			}
+		}
+		);
 		
 		//set left
 		ScrollPane leftpane = updateleftpane(control.buildRecommand());
