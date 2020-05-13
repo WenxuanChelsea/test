@@ -1,0 +1,13 @@
+White_oak,Sun,Medium,bronze,SPRING
+Black_gum,Sun_Shade,Wet_Medium,red,SPRING
+Milkweed,Sun,Dry,gold,SUMMER
+Golden_alexanders,Sun_Pt.shade,Moist,yellow,SPRING
+Sweet_pepperbush,Pt.shade,Moist,white,SUMMER
+Cornus_florida,Sun_Pt.shade,Medium,white,SPRING
+Oakleaf_hydrangea,Shade,Medium_Dry,bronze,SUMMER
+Shagbark_hickory,Sun_Pt.shade,Dry,golden,SPRING
+Red_maple,Sun_Pt.shade,Wet_Medium,red,SPRING
+Sassafras_albidum,Sun_Pt.shade,Wet_Medium,yellow,SPRING
+Amelanchier_laevis,Sun_Pt.sun,Medium,white,SPRING
+Ninebark,Sun,Dry_wet,pink,SUMMER
+llex_verticillata,Sun,Medium,red,SPRING

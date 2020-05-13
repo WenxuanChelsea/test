@@ -1,0 +1,6 @@
+White oak,sun,medium,bronze,May
+Black gum,sun-shade,wet/medium,red,May
+Milkweed,sun,dry,gold,June
+Golden alexanders,sun/pt.shade,yellow,April
+Sweet pepperbush,pt.shade,white,July
+
